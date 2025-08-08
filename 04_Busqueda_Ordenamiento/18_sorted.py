@@ -8,3 +8,5 @@ tuplax = (5, 2, 1, 5, 7, 2)
 ordenado = sorted(tuplax)
 print(type(tuplax))
 print(type(ordenado))
+print(sorted("hola"))
+
