@@ -1,0 +1,5 @@
+city = "Puerto Vallarta"
+car = "Toyota"
+frase_de_pelicula = "Hasta la vista baby"
+trabajo = "Profesor"
+nombre_completo = "Francisco Javier Ulloa Cortez"
