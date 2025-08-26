@@ -1,5 +1,4 @@
-lista1 = [1,2,3]
-lista1.append([4,5,6])
-
+lista1 = ["b","c","d"]
+lista1.insert(0,"a")  
 print(lista1)
 
