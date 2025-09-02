@@ -1,0 +1,10 @@
+cartas = {1, 2, 3, 4}
+print(cartas)
+cartas.add(5)
+print(cartas)
+cartas.add(-1)
+print(cartas)
+print(-1 in cartas)
+cartas.discard(-1)
+print(cartas)
+print(-1 in cartas)
