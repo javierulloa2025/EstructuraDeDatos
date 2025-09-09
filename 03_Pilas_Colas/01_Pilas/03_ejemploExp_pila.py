@@ -5,14 +5,14 @@ def esCorrecta_v2(exp_cadena):
     método 2, usando Pilas
     """
     p = Pila()
-    for s in exp_cadena:
-        if s == "{" or s == "[" or s == "(":
-            p.insertar(s)
-        if s == "}" or s == "]" or s == ")":
+    for sim in exp_cadena:
+        if sim == "{" or sim == "[" or sim == "(":
+            p.insertar(sim)
+        if sim == "}" or sim == "]" or sim == ")":
             if p.esta_vacia():
                 return False
-            m = p.quitar_elemento()
-            if (m == "{" and s != "}") or (m == "[" and s != "]") or (m == "(" and s != ")"):
+            quitar = p.quitar_elemento()
+            if (quitar == "{" and sim != "}") or (quitar == "[" and sim != "]") or (quitar == "(" and sim != ")"):
                 return False
 
     return p.esta_vacia()     
