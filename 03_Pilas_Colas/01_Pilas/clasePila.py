@@ -1,4 +1,4 @@
-class Pila():
+class Pila:
 #Constructor
   def __init__(self):
     self.elementos = []
@@ -7,7 +7,7 @@ class Pila():
   def insertar(self,dato):
     self.elementos.append(dato)
 
-# Está vacía?
+# ¿Está vacía?
   def esta_vacia(self):
     return len(self.elementos) == 0
 
@@ -20,7 +20,7 @@ class Pila():
 
 #Limpiar la pila
   def limpiar_pila(self):
-    del self.elementos[:]
+    self.elementos.clear()
     
 #Cima de la pila
   def cima(self):
@@ -35,9 +35,13 @@ class Pila():
 
 #Mostrar elementos de la pila
   def mostrar_elementos(self):
-    print("Los elementos de la pila son: ")
-    print(self.elementos)
+    return f"Los elementos de la pila son: {self.elementos[::-1]}"
+    
 
-#Método string para imprimir directamente la lista
-def __str__(self):
+#Método especial string para imprimir directamente la lista
+  def __str__(self):
     return f"Pila: {self.elementos}"
+  
+#Método especial len para obtener el tamaño
+  def __len__(self):
+    return len(self.elementos)
