@@ -1,5 +1,7 @@
-def primera():
-    print("hola")
-    #primera() #funcion recursiva
+def saludar(nombre):
+    print(f"Hola {nombre}")
 
-primera()
+saludar("Juan")
+saludar("Pedro")
+
+
