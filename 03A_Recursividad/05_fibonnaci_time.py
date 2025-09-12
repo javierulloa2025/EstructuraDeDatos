@@ -10,11 +10,9 @@ def fib(n):
     else:
         return fib(n-1) + fib(n-2)
     
-for numero in range(0, 8):
+for numero in range(0, 40):
     print(f"{fib(numero)}", end=" ")
 
 fin = time.perf_counter()
 print(f"\nTiempo de ejecución total: {fin - inicio:.6f} segundos")
 
-#38: 8.24 segundos
-#39: 19.64 segundos

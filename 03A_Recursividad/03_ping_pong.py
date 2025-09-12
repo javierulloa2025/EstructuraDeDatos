@@ -11,4 +11,4 @@ def pong(n):
     ping(n-1)
 
 
-ping(9)
+ping(99)

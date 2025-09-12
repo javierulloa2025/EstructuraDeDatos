@@ -18,5 +18,5 @@ def total_paginas(libros):
     else: 
         return libros[0] + total_paginas(libros[1:])
     
-print(total_paginas([50, 100, 150]))
+print(total_paginas([50, 100, 150, 200, 333, 112, 21]))
 

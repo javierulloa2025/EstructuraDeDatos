@@ -14,8 +14,6 @@ def pong(n):
 
 # Medición del tiempo
 inicio = time.perf_counter()
-
-ping(900)  # Solo necesitas llamar a uno, ya que se llaman mutuamente
-
+ping(900)  
 fin = time.perf_counter()
 print(f"\nTiempo de ejecución total: {fin - inicio:.6f} segundos")
