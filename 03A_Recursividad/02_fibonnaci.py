@@ -5,6 +5,6 @@ def fib(n):
         return n
     else:
         return fib(n-1) + fib(n-2)
-    
-for numero in range(0, 12):
+   
+for numero in range(0, 14):
     print(f"{fib(numero)}", end=" ")
