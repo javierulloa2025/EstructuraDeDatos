@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "project": "Keylogger Educativo",
+    "purpose": "Investigaci\u00f3n acad\u00e9mica",
+    "warning": "Solo usar con consentimiento expl\u00edcito",
+    "start_time": "2025-09-19T11:05:31.237775"
+  },
+  "key_logs": [
+    {
+      "timestamp": "2025-09-19T11:06:05.023255",
+      "key": ":",
+      "event_type": "up",
+      "scan_code": 52
+    },
+    {
+      "timestamp": "2025-09-19T11:06:05.044692",
+      "key": "right shift",
+      "event_type": "up",
+      "scan_code": 54
+    },
+    {
+      "timestamp": "2025-09-19T11:06:05.192609",
+      "key": "space",
+      "event_type": "up",
+      "scan_code": 57
+    },
+    {
+      "timestamp": "2025-09-19T11:06:05.907726",
+      "key": "1",
+      "event_type": "up",
+      "scan_code": 2
+    },
+    {
+      "timestamp": "2025-09-19T11:06:06.129366",
+      "key": "2",
+      "event_type": "up",
+      "scan_code": 3
+    },
+    {
+      "timestamp": "2025-09-19T11:06:06.337190",
+      "key": "3",
+      "event_type": "up",
+      "scan_code": 4
+    },
+    {
+      "timestamp": "2025-09-19T11:06:06.667357",
+      "key": "4",
+      "event_type": "up",
+      "scan_code": 5
+    },
+    {
+      "timestamp": "2025-09-19T11:06:06.877939",
+      "key": "1",
+      "event_type": "up",
+      "scan_code": 2
+    },
+    {
+      "timestamp": "2025-09-19T11:06:06.989135",
+      "key": "2",
+      "event_type": "up",
+      "scan_code": 3
+    }
+  ]
+}
