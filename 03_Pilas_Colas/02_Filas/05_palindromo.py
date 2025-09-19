@@ -1,5 +1,4 @@
-"""
-Programa que usa las clases Fila y Pila 
+"""Programa que usa las clases Fila y Pila 
 para comprobar si una frase o palabra es palíndromo
 Ejemplos:
     Reconocer
