@@ -20,6 +20,52 @@ class ArbolBinario:
                 self.derecho = ArbolBinario(valor)
             else:
                 self.derecho.insertar(valor)
+    
+    def eliminar_nodo(self, valor):
+        if self is None:
+            return None
+        
+        if valor < self.valor:
+            if self.izquierdo:
+                self.izquierdo = self.izquierdo.eliminar_nodo(valor)
+        elif valor > self.valor:
+            if self.derecho:
+                self.derecho = self.derecho.eliminar_nodo(valor)
+        else:
+            #Caso 1: sin hijos
+            if self.izquierdo is None and self.derecho is None:
+                return None
+            #Caso 2: un hijo
+            elif self.izquierdo is None:
+                return self.derecho
+            elif self.derecho is None:
+                return self.izquierdo
+            #Caso 3: dos hijos, reemplazo por el mínimo del subarbol derecho
+            else:
+                sucesor = self.derecho.encontrar_min()
+                self.valor = sucesor.valor
+                self.derecho = self.derecho.eliminar_nodo(sucesor.valor)
+
+        return self
+    
+    def encontrar_min(self):
+        actual = self
+        while actual.izquierdo:
+            actual = actual.izquierdo
+        return actual
+
+    def localizar_elem(self,valor):
+        if self.valor is None:
+            return False
+        
+        if valor == self.valor:
+            return True
+        elif valor < self.valor and self.izquierdo:
+            return self.izquierdo.localizar_elem(valor)
+        elif valor > self.valor and self.derecho:
+            return self.derecho.localizar_elem(valor)
+        else:
+            return False
 
     def mostrar_en_orden(self):
         elementos = []
@@ -60,17 +106,3 @@ class ArbolBinario:
         if self.derecho:
             self.derecho.postorden()
         print(self.valor, end= ", ")  
-        
-arbol = ArbolBinario()
-valores = [9, 2, 1, 16, 6, 11, 8, 4]
-for valor in valores:
-    arbol.insertar(valor)
-
-#print(arbol.mostrar_en_orden())
-#print(arbol.mostrar_arbol())
-arbol.inorden()
-print(" ")
-arbol.postorden()
-print(" ")
-arbol.preorden()
-
