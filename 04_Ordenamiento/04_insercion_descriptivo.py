@@ -12,8 +12,8 @@ def ordena_insercion(lista):
             cambios+=1
     return lista,cambios
 
-lista = [9, 8, 7, 6, 5]  # 10 cambios
+#lista = [9, 8, 7, 6, 5]  # 10 cambios
 #lista = [1, 2, 3, 4, 5, 6, 7] # 0 cambios
-#lista = [9, 8 , 7, 6, 5, 4, 3, 2, 1] # 36 cambios
+lista = [9, 8 , 7, 6, 5, 4, 3, 2, 1] # 36 cambios
 lista_ordenada, cambios = ordena_insercion(lista)
 print(f"Lista ordenada: {lista_ordenada}, cambios: {cambios}")
