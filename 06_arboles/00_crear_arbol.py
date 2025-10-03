@@ -1,24 +1,23 @@
 from claseArbol import ArbolBinario
 
-#arbol = ArbolBinario(9)  #opc A) especificando la raíz
-arbol = ArbolBinario()  #opc B) sin especificar nada, por defecto None
-valores = [9, 2, 1, 16, 6, 11, 8, 4]
+#arbol1 = ArbolBinario(9)  #opc A) especificando la raíz
+arbol = ArbolBinario() 
+
+valores = [8, 3, 1, 20, 5, 10, 7, 4]
+
 for valor in valores:
    arbol.insertar(valor)
 
 print(arbol.mostrar_en_orden())
-arbol.eliminar_nodo(11)
-arbol.eliminar_nodo(2)
-arbol.eliminar_nodo(1)
-print(arbol.mostrar_en_orden())
-arbol.insertar(2)
-print(arbol.mostrar_en_orden())
+print(arbol.mostrar_arbol())
 
-print(arbol.localizar_elem(99))
-print(arbol.localizar_elem(4))
-#print(arbol.mostrar_arbol())
-#arbol.inorden()
-#print(" ")
-#arbol.postorden()
-#print(" ")
-#arbol.preorden()
+
+print(arbol.buscar(8)) #True
+print(arbol.buscar(99)) #False
+
+print(arbol.altura_arbol())
+
+min = arbol.encontrar_min()
+max = arbol.encontrar_max()
+print(min.valor)
+print(max.valor)

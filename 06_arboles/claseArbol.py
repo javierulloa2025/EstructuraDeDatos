@@ -20,7 +20,48 @@ class ArbolBinario:
                 self.derecho = ArbolBinario(valor)
             else:
                 self.derecho.insertar(valor)
-    
+
+#Mostrar como lista de elementos ordenados
+    def mostrar_en_orden(self):
+        elementos = []
+        if self.izquierdo:
+            elementos.extend(self.izquierdo.mostrar_en_orden())
+        elementos.append(self.valor)
+        if self.derecho:
+            elementos.extend(self.derecho.mostrar_en_orden())
+        return elementos
+
+#Mostrar en forma visual
+    def mostrar_arbol(self, nivel=0, prefijo="Raíz: "):
+        resultado = "    " * nivel + prefijo + str(self.valor) + "\n"
+        if self.izquierdo:
+            resultado += self.izquierdo.mostrar_arbol(nivel + 1, "Izq: ")
+        if self.derecho:
+            resultado += self.derecho.mostrar_arbol(nivel + 1, "Der: ")
+        return resultado  
+
+#Altura
+    def altura_arbol(self):
+        
+        altura_izq = self.izquierdo.altura_arbol() if self.izquierdo else -1
+        altura_der = self.derecho.altura_arbol() if self.derecho else -1
+
+        return max(altura_der, altura_izq) + 1
+
+#Buscar valores (True / False)
+    def buscar(self,valor):
+        if self.valor is None:
+            return False
+        
+        if valor == self.valor:
+            return True
+        elif valor < self.valor and self.izquierdo:
+            return self.izquierdo.buscar(valor)
+        elif valor > self.valor and self.derecho:
+            return self.derecho.buscar(valor)
+        else:
+            return False
+        
     def eliminar_nodo(self, valor):
         if self is None:
             return None
@@ -53,38 +94,15 @@ class ArbolBinario:
         while actual.izquierdo:
             actual = actual.izquierdo
         return actual
-
-    def localizar_elem(self,valor):
-        if self.valor is None:
-            return False
-        
-        if valor == self.valor:
-            return True
-        elif valor < self.valor and self.izquierdo:
-            return self.izquierdo.localizar_elem(valor)
-        elif valor > self.valor and self.derecho:
-            return self.derecho.localizar_elem(valor)
-        else:
-            return False
-
-    def mostrar_en_orden(self):
-        elementos = []
-        if self.izquierdo:
-            elementos.extend(self.izquierdo.mostrar_en_orden())
-        elementos.append(self.valor)
-        if self.derecho:
-            elementos.extend(self.derecho.mostrar_en_orden())
-        return elementos
-
-#Mostrar en forma visual
-    def mostrar_arbol(self, nivel=0, prefijo="Raíz: "):
-        resultado = "    " * nivel + prefijo + str(self.valor) + "\n"
-        if self.izquierdo:
-            resultado += self.izquierdo.mostrar_arbol(nivel + 1, "Izq: ")
-        if self.derecho:
-            resultado += self.derecho.mostrar_arbol(nivel + 1, "Der: ")
-        return resultado
     
+    def encontrar_max(self):
+        actual = self
+        while actual.derecho:
+            actual = actual.derecho
+        return actual
+
+
+
 #Recorridos 
     def preorden(self):
         print(self.valor, end=", ")  #visitar raíz
