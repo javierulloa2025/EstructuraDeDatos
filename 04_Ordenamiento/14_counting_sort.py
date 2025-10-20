@@ -1,5 +1,6 @@
-def counting_sort(lista, maximo):
+def counting_sort(lista, maximo=9):
     """Método de ordenamiento countsort"""
+    maximo = max(l)
     lista_conteo = [0] * (maximo + 1) #creamos la lista de conteo (+1 por indice 0)
     lista_ordenada = [None] * len(lista) #creamos una lista ordenada vacía de momento
 
@@ -15,6 +16,6 @@ def counting_sort(lista, maximo):
         lista_conteo[indice] += 1   
     return lista_ordenada
 
-l = [0, 3, 9, 1, 8, 5, 3, 2, 2]
-r = counting_sort(l,max(l))
+l = [0, 3, 9, 1, 8, 5, 3, 2, 2,10]
+r = counting_sort(l)
 print(r)
