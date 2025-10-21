@@ -14,7 +14,7 @@ def bogo_sort(arr):
     return arr
 
 # Ejemplo de uso
-lista = [3, 1, 2, 4, 5, 6, 7, 8, 9 , 10]
+lista = [3, 1, 2, 4, 5, 6, 7]
 print("Lista original:", lista)
 lista_ordenada = bogo_sort(lista.copy())  # Usamos copy() para no modificar la original
 print("\nLista ordenada:", lista_ordenada)
