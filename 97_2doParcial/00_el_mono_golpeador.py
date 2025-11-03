@@ -4,8 +4,8 @@ luego aleatoriamente genera frases de la longitud de la frase ingresada,
 otra función evalúa el resultado mediante comparación; 
 una tercera función llamará repetitivamente a las funciones generar y calificar, 
 terminará si el 100% de las letras son correctas; 
-si las letras no son correctas, se generará una nueva cadena completa, 
-para dar seguimiento al programa, 
+si las letras no son correctas, se generará una nueva cadena completa. 
+Para dar seguimiento al programa, 
 otra función deberá imprimir la mejor secuencia generada hasta el momento y 
 su calificación correspondiente cada 1000 intentos."""
 
@@ -17,7 +17,7 @@ def generar_frase(longitud):
     Genera una frase aleatoria de la longitud especificada.
     Incluye letras mayúsculas, minúsculas, espacios y signos de puntuación básicos.
     """
-    caracteres = string.ascii_letters + string.digits + " .,!?;:'\"-"
+    caracteres = string.ascii_letters + string.digits
     return ''.join(random.choice(caracteres) for _ in range(longitud))
 
 def calificar_frase(frase_generada, frase_objetivo):
@@ -82,8 +82,8 @@ def simular_mono(frase_objetivo):
             break
             
         # Opcional: agregar un límite de intentos para evitar bucles infinitos muy largos
-        if intentos > 10000000:
-            print("\nSe alcanzó el límite de 10,000,000 intentos.")
+        if intentos > 1000000:
+            print("\nSe alcanzó el límite de 1,000,000 intentos.")
             print(f"Mejor resultado obtenido: '{mejor_frase}' ({mejor_porcentaje:.2f}%)")
             break
 
