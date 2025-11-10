@@ -27,8 +27,8 @@ class TablaHash:
 
     def __str__(self):
         return f"{self.tabla}"
+
 #Uso
-tejemplo = TablaHash()
 tejemplo.insertar("nombre", "Javier")
 tejemplo.insertar("edad", 45)
 print(tejemplo.buscar("nombre")) #salida Javier
