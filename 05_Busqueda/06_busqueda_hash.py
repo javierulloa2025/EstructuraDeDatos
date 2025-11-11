@@ -17,7 +17,7 @@ class TablaHash:
                 return v
         return None
     
-    def eliminar(self,clave):
+    def eliminar(self, clave):
         indice = funcion_hash(clave, self.tamano)
         for i, (k, v) in enumerate(self.tabla[indice]):
             if k == clave:
@@ -29,9 +29,5 @@ class TablaHash:
         return f"{self.tabla}"
 
 #Uso
-tejemplo.insertar("nombre", "Javier")
-tejemplo.insertar("edad", 45)
-print(tejemplo.buscar("nombre")) #salida Javier
-print(tejemplo.buscar("edad")) #salida 45
-print(tejemplo.buscar("telefono")) #salida None
-print(tejemplo) #salida la tabla completa (usa __str__)
+tejemplo=TablaHash()
+print(tejemplo)
