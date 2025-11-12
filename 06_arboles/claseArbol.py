@@ -1,3 +1,5 @@
+from collections import deque
+
 class ArbolBinario:
     def __init__(self, valor = None):
         self.valor = valor
@@ -131,3 +133,22 @@ class ArbolBinario:
         print(self.valor, end= ", ")  
 
 #Recorridos BFS
+    def bfs(self):
+        if self.valor is None:
+            return []
+        
+        cola = deque()
+        resultado = []
+
+        cola.append(self)
+
+        while cola:
+            nodo = cola.popleft()
+            resultado.append(nodo.valor)
+
+            if nodo.izquierdo:
+                cola.append(nodo.izquierdo)
+            if nodo.derecho:
+                cola.append(nodo.derecho)
+
+        return resultado

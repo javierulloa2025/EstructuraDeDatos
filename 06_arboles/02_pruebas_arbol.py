@@ -9,11 +9,10 @@ minimo = ar.encontrar_min()
 maximo = ar.encontrar_max()
 print(minimo.valor)
 print(maximo.valor)
-ar.eliminar_nodo(1)
+#ar.eliminar_nodo(1)
 print(ar.mostrar_arbol())
 print(minimo.valor)
-
-
+print(ar.bfs())
 
 
 
