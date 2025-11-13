@@ -5,9 +5,7 @@ class ArbolAVL:
         self.derecho = None
         self.altura = 1 if valor is not None else 0
 
-    # ============================
     # FUNCIONES AUXILIARES
-    # ============================
 
     def obtener_altura(self, nodo):
         if nodo is None:
@@ -28,10 +26,21 @@ class ArbolAVL:
         while actual.izquierdo:
             actual = actual.izquierdo
         return actual
+    
+    def buscar_nodo(self, valor):
+        """Devuelve el nodo con el valor indicado, si existe"""
+        if self.valor is None:
+            return None
+        if valor == self.valor:
+            return self
+        elif valor < self.valor and self.izquierdo:
+            return self.izquierdo.buscar_nodo(valor)
+        elif valor > self.valor and self.derecho:
+            return self.derecho.buscar_nodo(valor)
+        return None
 
-    # ============================
+
     # ROTACIONES
-    # ============================
 
     def rotacion_derecha(self):
         """Rotación simple a la derecha"""
@@ -63,9 +72,7 @@ class ArbolAVL:
 
         return nueva_raiz
 
-    # ============================
     # INSERCIÓN BALANCEADA
-    # ============================
 
     def insertar(self, valor):
         if self.valor is None:
@@ -111,9 +118,7 @@ class ArbolAVL:
 
         return self
 
-    # ============================
     # ELIMINACIÓN BALANCEADA
-    # ============================
 
     def eliminar_nodo(self, valor):
         if self.valor is None:
@@ -163,10 +168,8 @@ class ArbolAVL:
 
         return self
 
-    # ============================
     # RECORRIDOS
-    # ============================
-
+    
     def preorden(self):
         """Recorrido en preorden (raíz, izquierda, derecha)"""
         if self.valor is not None:
@@ -185,14 +188,23 @@ class ArbolAVL:
             resultado += self.derecho.mostrar_arbol(nivel + 1, "Der: ")
         return resultado      
 
+    def obtener_info_nodo(self, valor):
+        """Muestra la altura y el factor de equilibrio del nodo que contiene el valor indicado"""
+        nodo = self.buscar_nodo(valor)
+        if nodo is None:
+            print(f"El valor {valor} no se encuentra en el árbol.")
+            return
+        altura_izq = self.obtener_altura(nodo.izquierdo)
+        altura_der = self.obtener_altura(nodo.derecho)
+        fb = altura_izq - altura_der
+        print(f"Nodo {valor}: altura = {nodo.altura}, FB = {fb}")
+
+
 arbol = ArbolAVL()
 for v in [30, 20, 40, 10, 25, 35, 50]:
     arbol = arbol.insertar(v)
 
-print("Preorden del árbol AVL balanceado:")
-arbol.preorden()
-
+print(arbol.obtener_info_nodo(18))
 #arbol = arbol.eliminar_nodo(20)
 #print("\nPreorden tras eliminar 20:")
-arbol.preorden()
 print(arbol.mostrar_arbol())
