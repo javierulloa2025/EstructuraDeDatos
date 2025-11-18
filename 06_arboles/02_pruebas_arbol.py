@@ -1,8 +1,11 @@
 from claseArbol import ArbolBinario
 
-ar = ArbolBinario(9)
+ar = ArbolBinario(0)
 ar.insertar(1)
-ar.insertar(11)
+ar.insertar(2)
+ar.insertar(3)
+ar.insertar(4)
+ar.insertar(5)
 
 
 minimo = ar.encontrar_min()
@@ -13,6 +16,6 @@ print(maximo.valor)
 print(ar.mostrar_arbol())
 print(minimo.valor)
 print(ar.bfs())
-
+print(ar.dibujar_ascii())
 
 

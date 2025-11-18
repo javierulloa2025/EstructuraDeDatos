@@ -196,15 +196,85 @@ class ArbolAVL:
             return
         altura_izq = self.obtener_altura(nodo.izquierdo)
         altura_der = self.obtener_altura(nodo.derecho)
-        fb = altura_izq - altura_der
-        print(f"Nodo {valor}: altura = {nodo.altura}, FB = {fb}")
+        fe = altura_izq - altura_der
+        print(f"Nodo {valor}: altura = {nodo.altura}, FE = {fe}")
 
+    # Dibujar árbol en ASCII (opcional, generada IA)
+    def dibujar_ascii(self):
 
-arbol = ArbolAVL()
-for v in [30, 20, 40, 10, 25, 35, 50]:
-    arbol = arbol.insertar(v)
+        def _dibujar(nodo):
+            if nodo is None or nodo.valor is None:
+                return [], 0, 0
 
-print(arbol.obtener_info_nodo(18))
-#arbol = arbol.eliminar_nodo(20)
-#print("\nPreorden tras eliminar 20:")
-print(arbol.mostrar_arbol())
+            # Subárboles
+            lineas_izq, ancho_izq, centro_izq = _dibujar(nodo.izquierdo)
+            lineas_der, ancho_der, centro_der = _dibujar(nodo.derecho)
+
+            s = str(nodo.valor)
+            ancho_s = len(s)
+
+            # Caso: nodo sin hijos
+            if ancho_izq == 0 and ancho_der == 0:
+                return [s], ancho_s, ancho_s // 2
+
+            # Normalizar alturas de subárboles
+            alto_izq = len(lineas_izq)
+            alto_der = len(lineas_der)
+            alto = max(alto_izq, alto_der)
+
+            while len(lineas_izq) < alto:
+                lineas_izq.append(" " * ancho_izq)
+            while len(lineas_der) < alto:
+                lineas_der.append(" " * ancho_der)
+
+            espacio_entre = 1
+            ancho_total = ancho_izq + espacio_entre + ancho_s + espacio_entre + ancho_der
+            centro = ancho_izq + espacio_entre + ancho_s // 2
+
+            # Línea del nodo (centrada)
+            linea_raiz = (
+                (" " * ancho_izq) +
+                (" " * espacio_entre) +
+                s +
+                (" " * espacio_entre) +
+                (" " * ancho_der)
+            )
+
+            # Línea de conexiones
+            linea_conex = [" "] * ancho_total
+            if ancho_izq > 0:
+                pos_slash = centro_izq
+                linea_conex[pos_slash] = "/"
+            if ancho_der > 0:
+                pos_back = ancho_izq + espacio_entre + ancho_s + centro_der
+                linea_conex[pos_back] = "\\"
+
+            linea_conex_str = "".join(linea_conex)
+
+            # Combinar subárboles
+            combinado = []
+            espacio_central = espacio_entre + ancho_s + espacio_entre
+            for i in range(alto):
+                combinado.append(
+                    lineas_izq[i] +
+                    (" " * espacio_central) +
+                    lineas_der[i]
+                )
+
+            # Salida final
+            salida = [linea_raiz, linea_conex_str] + combinado
+            return salida, ancho_total, centro
+
+        lineas, _, _ = _dibujar(self)
+        return "\n".join(lineas) if lineas else "Árbol vacío"
+
+arbol3 = ArbolAVL()
+
+arbol3 = arbol3.insertar(12)
+arbol3 = arbol3.insertar(14)
+arbol3 = arbol3.insertar(8)
+arbol3 = arbol3.insertar(6)
+arbol3 = arbol3.insertar(9)
+#print(arbol3.dibujar_ascii())
+arbol3 = arbol3.insertar(10)
+print(arbol3.dibujar_ascii())

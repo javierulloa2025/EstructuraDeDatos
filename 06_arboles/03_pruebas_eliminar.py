@@ -65,7 +65,9 @@ class ArbolBinario:
         while actual.derecho:
             actual = actual.derecho
         return actual
-        
+    
+
+
 ar = ArbolBinario(3)
 ar.insertar(1)
 ar.insertar(4)
@@ -75,3 +77,4 @@ if maximo:
     print(maximo.valor)
 else:
     print("árbol vacío")
+
