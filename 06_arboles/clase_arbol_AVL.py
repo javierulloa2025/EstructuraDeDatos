@@ -270,14 +270,4 @@ class ArbolAVL:
 
 
 
-#Ejemplo de uso
-"""arbol = ArbolAVL()
-for v in [30, 20, 40, 10, 25, 35, 50]:
-    arbol = arbol.insertar(v)
 
-#arbol = arbol.eliminar_nodo(20)
-#print("\nPreorden tras eliminar 20:")
-print(arbol.mostrar_arbol())
-
-arbol.obtener_info_nodo(40)
-#print(arbol.dibujar_ascii())"""

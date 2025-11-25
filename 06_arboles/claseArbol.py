@@ -106,7 +106,7 @@ class ArbolBinario:
         if self.valor is None:
             return None
         if self.derecho is None:
-            return self
+            return self.valor
         else:
             return self.derecho.encontrar_max()
 
