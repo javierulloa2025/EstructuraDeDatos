@@ -3,7 +3,6 @@ from clase_heap import MaxHeap
 def heap_sort(lista):
     h = MaxHeap()
     h.construye_maxHeap(lista)
-
     resultado = []
 
     while len(h.heap) > 0:

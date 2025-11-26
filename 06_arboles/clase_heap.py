@@ -17,7 +17,8 @@ class MaxHeap:
 
     def recorre_arriba(self,indice):
         while indice != 0 and self.heap[self.padre(indice)] < self.heap[indice]:
-            self.heap[self.padre(indice)], self.heap[indice] = self.heap[indice], self.heap[self.padre(indice)]
+            self.heap[self.padre(indice)], self.heap[indice] = \
+            self.heap[indice], self.heap[self.padre(indice)]
 
             indice = self.padre(indice)
     
@@ -57,19 +58,20 @@ class MaxHeap:
     def __str__(self):
         return str(self.heap[:])
     
-"""
-h = MaxHeap()
-h.insertar(8)
-h.insertar(2)
-h.insertar(5)
-h.insertar(12)
-h.insertar(1)
-print(h)
-print(h.extraer_max())
-print(h)
+
+cola_prioridad = MaxHeap()
+cola_prioridad.insertar(8)
+cola_prioridad.insertar(2)
+cola_prioridad.insertar(5)
+cola_prioridad.insertar(12)
+cola_prioridad.insertar(1)
+print(cola_prioridad)
+print(cola_prioridad.extraer_max())
+print(cola_prioridad.extraer_max())
+print(cola_prioridad)
 
 lista1 = [90, 80 , 20 , 10 , 20]
 h2 = MaxHeap()
 h2.construye_maxHeap(lista1)
 print(h2)
-"""        
+
