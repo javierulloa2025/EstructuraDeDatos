@@ -1,7 +1,7 @@
 class MaxHeap:
     def __init__(self):
         self.heap = []
-    
+            
     def padre(self,indice):
         return(indice-1) // 2
     
@@ -57,6 +57,7 @@ class MaxHeap:
     def __str__(self):
         return str(self.heap[:])
     
+"""
 h = MaxHeap()
 h.insertar(8)
 h.insertar(2)
@@ -71,4 +72,4 @@ lista1 = [90, 80 , 20 , 10 , 20]
 h2 = MaxHeap()
 h2.construye_maxHeap(lista1)
 print(h2)
-        
+"""        
