@@ -4,7 +4,7 @@ class Fruta():
         self.sabor = sabor
         self.semilla = semilla
 
-pera = Fruta("Verde", "Dulce", "si")
+pera = Fruta("Verde", "Dulce", True)
 
 print(pera.color)
 print(pera.sabor)
