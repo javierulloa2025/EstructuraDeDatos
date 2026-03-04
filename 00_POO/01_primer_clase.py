@@ -1,6 +1,6 @@
 class NombreClase():
 
-    #Atributos
+    #Atributos de clase
     atributo_1 = "valor 1"
     atributo_2 = "valor 2"
 
@@ -10,4 +10,5 @@ class NombreClase():
     def metodo_2(self):
         print("El otro metodo de clase")
 
+    
 
