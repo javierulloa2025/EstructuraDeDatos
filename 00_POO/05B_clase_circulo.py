@@ -8,5 +8,7 @@ class Circulo():
         return Circulo.pi*self.radio*self.radio
 
 circulo_uno = Circulo(5)
+circulo_dos = Circulo(8)
 
 print(circulo_uno.area())
+print(circulo_dos.area())

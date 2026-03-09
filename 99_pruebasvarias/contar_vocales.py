@@ -1,4 +1,4 @@
-cadena = "Francisco Javier Ulloa Áraiza"
+cadena = "Francisco Javier Pingüino"
 cadena.lower()
 
 def cuenta_vocales(cadena):
