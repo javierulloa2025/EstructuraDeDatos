@@ -19,6 +19,7 @@ def es_palindromo(frase):
     frase_procesada = frase_procesada.replace("í","i")
     frase_procesada = frase_procesada.replace("ó","o")
     frase_procesada = frase_procesada.replace("ú","u")
+    print(frase_procesada)
 
     #iniciar pila y cola
     pila = Pila()

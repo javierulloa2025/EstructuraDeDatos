@@ -40,8 +40,26 @@ class Pila:
 
 #Método especial string para imprimir directamente la lista
   def __str__(self):
-    return f"Pila: {self.elementos}"
+    return f"Pila: {self.elementos[::-1]}"
   
 #Método especial len para obtener el tamaño
   def __len__(self):
     return len(self.elementos)
+  
+pila1 = Pila()
+print(pila1.esta_vacia())
+
+pila1.insertar("uno")
+pila1.insertar("dos")
+pila1.insertar("tres")
+pila1.insertar("cuatro")
+
+print(pila1.mostrar_elementos())
+
+while (not pila1.esta_vacia()):
+  print(pila1.quitar_elemento())
+
+
+
+
+

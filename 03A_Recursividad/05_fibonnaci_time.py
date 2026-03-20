@@ -1,5 +1,7 @@
 import time
 
+hasta = int (input("¿hasta qué número?: "))
+
 # Medición del tiempo
 inicio = time.perf_counter()
 
@@ -10,7 +12,7 @@ def fib(n):
     else:
         return fib(n-1) + fib(n-2)
     
-for numero in range(0, 16):
+for numero in range(0, hasta):
     print(f"{fib(numero)}", end=" ")
 
 fin = time.perf_counter()

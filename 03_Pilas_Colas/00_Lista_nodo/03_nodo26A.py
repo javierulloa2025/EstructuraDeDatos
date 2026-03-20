@@ -2,7 +2,7 @@ class Nodo:
     def __init__(self, info=None):
         self.info = info
         self.sig = None
-
+        
 # Lista vacía al inicio
 cabeza = None
 cola = None
