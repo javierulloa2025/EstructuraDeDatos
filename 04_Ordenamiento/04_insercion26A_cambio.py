@@ -10,7 +10,9 @@ def ordena_insercion(lista):
         lista[posicion + 1] = valorActual
     return lista, intercambios
 
-lista = [1,2,3,4,5]  
+#lista = [1,2,3,4,5]  #intercambios 0
+#lista = [9,8,7,6,5]   #intercambios 10
+lista = [9,8,7,6,5,4,3,2,1] #intercambios 36
 lista_ordenada, intercambios = ordena_insercion(lista)
 print(lista_ordenada)
 print(f"Intercambios realizados: {intercambios}")
