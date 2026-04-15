@@ -14,5 +14,6 @@ def dividir_lista(l):
     derecha = dividir_lista(derecha)
     
 l = [9, 5, 4, 3, 8, 7, 3, 1, 2]
+print(l)
 dividir_lista(l)
 
