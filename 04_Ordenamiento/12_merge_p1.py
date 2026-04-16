@@ -1,19 +1,19 @@
-def dividir_lista(l):
+def dividir_lista(lista):
     # Caso base: la lista tiene 0 o 1 elemento
-    if len(l) <= 1:
-        return (l)
+    if len(lista) <= 1:
+        return (lista)
     
     # Dividir la lista en dos mitades
-    mitad = len(l) // 2
-    izquierda = l[:mitad]
+    mitad = len(lista) // 2
+    izquierda = lista[:mitad]
     print(izquierda)
-    derecha = l[mitad:]
+    derecha = lista[mitad:]
     print(derecha)
     
-    izquierda = dividir_lista(izquierda)
-    derecha = dividir_lista(derecha)
+    izquierda = dividir_lista(izquierda) #recursión
+    derecha = dividir_lista(derecha) #recursión
     
-l = [9, 5, 4, 3, 8, 7, 3, 1, 2]
-print(l)
-dividir_lista(l)
+li = [8, 10, 4, 2, 1, 7, 6]
+print(li)
+dividir_lista(li)
 
