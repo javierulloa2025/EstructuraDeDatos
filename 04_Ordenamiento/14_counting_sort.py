@@ -1,6 +1,9 @@
+import random
+import time
+
 def counting_sort(lista, maximo=9):
     """Método de ordenamiento countsort"""
-    maximo = max(l)
+    maximo = max(lista_aleatoria)
     lista_conteo = [0] * (maximo + 1) #creamos la lista de conteo (+1 por indice 0)
     lista_ordenada = [None] * len(lista) #creamos una lista ordenada vacía de momento
 
@@ -16,6 +19,14 @@ def counting_sort(lista, maximo=9):
         lista_conteo[indice] += 1   
     return lista_ordenada
 
-l = [0, 3, 9, 1, 8, 5, 3, 2, 2,10]
-r = counting_sort(l)
+#l = [0, 3, 9, 1, 8, 5, 3, 2, 2,10]
+tamanio = int(input("¿Cuántos elementos en la lista? (random del 0 al 100): "))
+lista_aleatoria = [random.randint(0, 100) for _ in range(tamanio)]
+
+#Medir tiempo
+inicio = time.perf_counter()
+print(lista_aleatoria)
+r = counting_sort(lista_aleatoria)
 print(r)
+fin = time.perf_counter()
+print(f"\nTiempo de ejecución total: {fin - inicio:.6f} segundos")

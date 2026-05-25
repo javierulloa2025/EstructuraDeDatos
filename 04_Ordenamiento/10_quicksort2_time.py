@@ -1,4 +1,5 @@
 import time
+import random
 #Algoritmo quicksort más claro, con medición tiempo
 def quicksort2(lista):
     if len(lista) <= 1:   #Caso base [] o len=1
@@ -20,12 +21,15 @@ def quicksort2(lista):
                 lista_derecha.append(elemento) #los demás (mayores) a la derecha
     return quicksort2(lista_izquierda) + lista_centro + quicksort2(lista_derecha) #recursividad
 
+
+tamanio = int(input("¿Cuántos elementos en la lista? (random del 1 al 1000): "))
+lista_aleatoria = [random.randint(1, 1000) for _ in range(tamanio)]
+
 #Medir tiempo
 inicio = time.perf_counter()
-
-desorden = [99, 2, 3, 21, 23, 1, 3, 33, 33, 33, 33, 22, 22, 22, 33, 12, 123, 31, 5, 77, 33, 11, 99, 99, 111, 221]
-orden = quicksort2(desorden)
-print(orden)
+orden = quicksort2(lista_aleatoria)
+print(f"Lista desordenada: {lista_aleatoria}")
+print(f"Lista ordenada: {orden}")
 
 fin = time.perf_counter()
 print(f"\nTiempo de ejecución total: {fin - inicio:.6f} segundos")
